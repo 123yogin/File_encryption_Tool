@@ -1,0 +1,351 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #2d3748;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #3182ce, #63b3ed);
+}
+
+h1 {
+    text-align: center;
+    color: #1a365d;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #3182ce, #63b3ed);
+    border-radius: 2px;
+}
+
+.sections-wrapper {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.section {
+    flex: 1;
+    min-width: 320px;
+    padding: 30px;
+    background: #f8fafc;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+    position: relative;
+    overflow: hidden;
+}
+
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #3182ce, #63b3ed);
+    border-radius: 4px 0 0 4px;
+}
+
+.section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #2d3748;
+    margin-bottom: 25px;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+h2 i {
+    color: #4299e1;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    position: relative;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.file-upload-label {
+    padding: 15px 20px;
+    background: #edf2f7;
+    color: #4a5568;
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px dashed #cbd5e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 100px;
+}
+
+.file-upload-label i {
+    font-size: 1.5em;
+    color: #4299e1;
+}
+
+.file-upload-label:hover {
+    background: #e2e8f0;
+    border-color: #4299e1;
+}
+
+.file-upload-label.has-file {
+    background: #ebf8ff;
+    border-style: solid;
+    border-color: #4299e1;
+}
+
+.file-upload-label .drop-text {
+    font-size: 0.875em;
+    color: #718096;
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+input[type="password"] {
+    width: 100%;
+    padding: 15px 20px;
+    padding-right: 40px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    background: #fff;
+}
+
+input[type="password"]:focus {
+    outline: none;
+    border-color: #4299e1;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #718096;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.toggle-password:hover {
+    color: #4a5568;
+}
+
+button {
+    padding: 15px 20px;
+    background: linear-gradient(90deg, #3182ce, #4299e1);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transform: translateX(-100%);
+}
+
+button:hover::after {
+    transform: translateX(100%);
+    transition: transform 0.5s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(66, 153, 225, 0.3);
+}
+
+button:disabled {
+    background: #cbd5e0;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.progress-wrapper {
+    margin-top: 20px;
+    display: none;
+}
+
+.progress-wrapper.active {
+    display: block;
+}
+
+.progress {
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #4299e1, #63b3ed);
+    transition: width 0.3s ease;
+}
+
+.progress-status {
+    font-size: 0.875em;
+    color: #718096;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.progress-status i {
+    color: #4299e1;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+.message {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 0.95em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    transform: translateY(10px);
+}
+
+.message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.message i {
+    font-size: 1.2em;
+}
+
+.message.success {
+    background: #c6f6d5;
+    color: #2f855a;
+    border: 1px solid #9ae6b4;
+}
+
+.message.error {
+    background: #fed7d7;
+    color: #c53030;
+    border: 1px solid #feb2b2;
+}
+
+.message.warning {
+    background: #feebc8;
+    color: #c05621;
+    border: 1px solid #fbd38d;
+}
+
+.file-info {
+    margin-top: 10px;
+    font-size: 0.875em;
+    color: #718096;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .sections-wrapper {
+        gap: 20px;
+    }
+
+    .section {
+        min-width: 100%;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    button {
+        padding: 12px 16px;
+    }
+}

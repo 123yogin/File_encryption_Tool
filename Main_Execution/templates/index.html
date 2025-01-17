@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure File Encryptor</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="static\css\styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>File Encryptor</h1>
+        
+        <div class="sections-wrapper">
+            <!-- Encrypt Section -->
+            <div class="section">
+                <h2><i class="fas fa-lock"></i>Encrypt File</h2>
+                <form id="encrypt-form">
+                    <div class="input-group">
+                        <label class="file-upload-label" for="encrypt-file">
+                            <i class="fas fa-file-upload"></i>
+                            <span class="label-text">Choose File to Encrypt</span>
+                            <span class="drop-text">or drag and drop here</span>
+                        </label>
+                        <input id="encrypt-file" type="file" name="file" required>
+                        <div class="file-info"></div>
+                    </div>
+                    
+                    <div class="password-wrapper">
+                        <input type="password" name="password" placeholder="Enter encryption password" required>
+                        <i class="fas fa-eye toggle-password"></i>
+                    </div>
+                    
+                    <button type="submit">
+                        <i class="fas fa-lock"></i>
+                        Encrypt File
+                    </button>
+                </form>
+                
+                <div class="progress-wrapper">
+                    <div class="progress">
+                        <div id="encrypt-progress" class="progress-bar"></div>
+                    </div>
+                    <div class="progress-status">
+                        <i class="fas fa-spinner"></i>
+                        <span class="status-text">Processing: <span class="percent">0</span>%</span>
+                    </div>
+                </div>
+                
+                <div id="encrypt-message" class="message"></div>
+            </div>
+
+            <!-- Decrypt Section -->
+            <div class="section">
+                <h2><i class="fas fa-unlock"></i> Decrypt File</h2>
+                <form id="decrypt-form">
+                    <div class="input-group">
+                        <label class="file-upload-label" for="decrypt-file">
+                            <i class="fas fa-file-upload"></i>
+                            <span class="label-text">Choose File to Decrypt</span>
+                            <span class="drop-text">or drag and drop here</span>
+                        </label>
+                        <input id="decrypt-file" type="file" name="file" required>
+                        <div class="file-info"></div>
+                    </div>
+                    
+                    <div class="password-wrapper">
+                        <input type="password" name="password" placeholder="Enter decryption password" required>
+                        <i class="fas fa-eye toggle-password"></i>
+                    </div>
+                    
+                    <button type="submit">
+                        <i class="fas fa-unlock"></i>
+                        Decrypt File
+                    </button>
+                </form>
+                
+                <div class="progress-wrapper">
+                    <div class="progress">
+                        <div id="decrypt-progress" class="progress-bar"></div>
+                    </div>
+                    <div class="progress-status">
+                        <i class="fas fa-spinner"></i>
+                        <span class="status-text">Processing: <span class="percent">0</span>%</span>
+                    </div>
+                </div>
+                
+                <div id="decrypt-message" class="message"></div>
+            </div>
+        </div>
+    </div>
+<script type="module" src="static\js\script.js"></script>
+</body>
+</html>
